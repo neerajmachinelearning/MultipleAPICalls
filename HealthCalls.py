@@ -1,13 +1,13 @@
 import requests, json
 import xlrd
 
-# yQIv7IC1Aqx0PB31IBybUZluf48Y
+#Function to make api call
 def make_api_request(url, token):
     result = requests.get(url, headers={'Authorization': 'Bearer {}'.format(token)})
     print(result.headers, result.text)
     return result
 
-
+#Function to read excel file and print the result to text file. 
 def call_api(sheet):
     with open(r'C:\Neeraj Sharma\API-COE\Testing\output.txt', 'w') as f:
         for i in range(sheet.nrows):
